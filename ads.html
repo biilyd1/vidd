@@ -1,0 +1,163 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <style type="text/css">
+    body {
+        background-color: #f0f0f2;
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        
+    }
+    div {
+        width: 600px;
+        margin: 5em auto;
+        padding: 2em;
+        background-color: #fdfdff;
+        border-radius: 0.5em;
+        box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.02);
+    }
+    a:link, a:visited {
+        color: #38488f;
+        text-decoration: none;
+    }
+    @media (max-width: 700px) {
+        div {
+            margin: 0 auto;
+            width: auto;
+        }
+    }
+    </style>    
+<script type="text/javascript">
+window.innerHeight=1920;window.innerWidth=1080; window.outerHeight=1920;window.outerWidth=1080;
+window.screenY=1920;window.screenX=1080;
+</script>
+<script type="text/javascript">
+    var adfly_id = 23019109;
+    var adfly_advert = 'int';
+    var frequency_cap = 15;
+    var frequency_delay = 1;
+    var init_delay = 0;
+    var popunder = true;
+    var adfly_google_compliant = false;
+    var adfly_protocol = 'https';
+</script>
+<script>
+adfly_cookie = function(name, value, options) {
+    if (typeof value != 'undefined') { // name and value given, set cookie
+        options = options || {};
+        if (value === null) {
+            value = '';
+            options.expires = -1;
+        }
+        var expires = '';
+        if (options.expires && (typeof options.expires == 'number' || options.expires.toUTCString)) {
+            var date;
+            if (typeof options.expires == 'number') {
+                date = new Date();
+                date.setTime(date.getTime() + (options.expires * 24 * 60 * 60 * 1000));
+            } else {
+                date = options.expires;
+            }
+            expires = '; expires=' + date.toUTCString(); // use expires attribute, max-age is not supported by IE
+        }
+
+        // CAUTION: Needed to parenthesize options.path and options.domain
+        // in the following expressions, otherwise they evaluate to undefined
+        // in the packed version for some reason...
+        var path = options.path ? '; path=' + (options.path) : '';
+        var domain = options.domain ? '; domain=' + (options.domain) : '';
+        var secure = options.secure ? '; secure' : '';
+        document.cookie = [name, '=', encodeURIComponent(value), expires, path, domain, secure].join('');
+    } else { // only name given, get cookie
+        var cookieValue = null;
+        if (document.cookie && document.cookie != '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = jQuery.trim(cookies[i]);
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+};
+
+(function () {
+
+    var s = "adfly";
+    if (typeof window.adult_id != "undefined") { s = "adult"; }
+
+    var defaults = {
+        protocol: "https",
+        popunder: false,
+        cdn: "cdn.adf.ly"
+    };
+    if (s == "adult") {
+        defaults.cdn = "cdn.zo.ee";
+    }
+
+    var protocol = defaults.protocol;
+    if (typeof window[s+"_protocol"] != "undefined") { protocol = window[s+"_protocol"].toLowerCase(); }
+    if (protocol != "http" && protocol != "https") { protocol = defaults.protocol; }
+    if (protocol == 'http' && window.location && window.location.protocol && window.location.protocol.indexOf('https') == 0) {
+    	protocol = 'https';
+    }
+
+    var popunder = typeof window.popunder == "boolean" ? window.popunder : defaults.popunder;
+
+    function getScriptSourceHost(name){
+        var scripts = document.getElementsByTagName('script'),
+            len = scripts.length,
+            re = new RegExp(name,"gi"),
+            src, loadedHost;
+
+        while (len--) {
+            src = scripts[len].src;
+            if (src && src.match(re)) {
+                loadedHost = src;
+                var matchedHost = loadedHost.match(new RegExp('https?://[^/]*'));
+                if(matchedHost){
+                    matchedHost = matchedHost[0];
+
+                    if (matchedHost.indexOf("://") > -1) {
+                        matchedHost = matchedHost.split('/')[2];
+                    } else {
+                        matchedHost = matchedHost.split('/')[0];
+                    }
+
+                    return matchedHost;
+                }
+            }
+        }
+    }
+
+    var sourceHost = getScriptSourceHost('entry.js');
+    if(sourceHost){
+        defaults.cdn = sourceHost;
+    }
+
+
+})();
+    </script>
+    
+<script type='text/javascript' id="PuDisplayScript" src='//cdn.adf.ly/js/display.js'></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.adf.ly/static/js/entry_scriptV1.2.js"></script>
+</head><body>
+<div>
+    <h1>ADS</h1>
+    <p>Hello world</p>
+</div>
+</body>
+</html>
